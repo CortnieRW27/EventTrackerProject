@@ -7,7 +7,7 @@ import com.skilldistillery.hoptrack.entities.Beer;
 public interface BeerService {
 	List<Beer> listAllBeers();
 	
-	Beer getBeer(int beerId);
+	Beer findById(int beerId);
 	
 	Beer create(Beer newBeer);
 	

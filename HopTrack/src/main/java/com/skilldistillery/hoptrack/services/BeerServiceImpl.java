@@ -1,6 +1,7 @@
 package com.skilldistillery.hoptrack.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,31 +18,55 @@ public class BeerServiceImpl implements BeerService {
 
 	@Override
 	public List<Beer> listAllBeers() {
-				return beerRepo.findAll();
+		return beerRepo.findAll();
 	}
 
 	@Override
-	public Beer getBeer(int beerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Beer findById(int beerId) {
+		Optional<Beer> beerOpt = beerRepo.findById(beerId);
+		return beerOpt.orElse(null) ;
 	}
 
 	@Override
 	public Beer create(Beer newBeer) {
-		// TODO Auto-generated method stub
-		return null;
+		return beerRepo.save(newBeer);
 	}
 
 	@Override
 	public Beer update(int beerId, Beer newBeer) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Beer> existingBeerOpt = beerRepo.findById(beerId);
+		if(existingBeerOpt.isPresent()) {
+			Beer existingBeer = existingBeerOpt.get();
+			
+			existingBeer.setName(newBeer.getName());
+			existingBeer.setaBV(newBeer.getaBV());
+			existingBeer.setBrewery(newBeer.getBrewery());
+			existingBeer.setType(newBeer.getType());
+			existingBeer.setDescription(newBeer.getDescription());
+			existingBeer.setColor(newBeer.getDescription());
+			existingBeer.setRating(newBeer.getRating());
+			existingBeer.setFoodPairing(newBeer.getFoodPairing());
+			existingBeer.setAvailability(newBeer.getAvailability());
+			
+			return beerRepo.saveAndFlush(existingBeer);
+			
+		}else {
+			return null;
+		}
+		
 	}
 
 	@Override
 	public boolean delete(int beerId) {
-		// TODO Auto-generated method stub
+		Optional<Beer> toDeleteOpt = beerRepo.findById(beerId);
+		if(toDeleteOpt.isPresent()) {
+			Beer toDelete = toDeleteOpt.get();
+			beerRepo.delete(toDelete);
+			return true;
+		}
 		return false;
 	}
+
+
 
 }
