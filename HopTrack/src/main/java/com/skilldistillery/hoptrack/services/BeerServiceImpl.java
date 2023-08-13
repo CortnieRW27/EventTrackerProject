@@ -34,12 +34,13 @@ public class BeerServiceImpl implements BeerService {
 
 	@Override
 	public Beer update(int beerId, Beer newBeer) {
+		System.out.println("#################" + beerId);
 		Optional<Beer> existingBeerOpt = beerRepo.findById(beerId);
 		if(existingBeerOpt.isPresent()) {
 			Beer existingBeer = existingBeerOpt.get();
 			
 			existingBeer.setName(newBeer.getName());
-			existingBeer.setaBV(newBeer.getaBV());
+			existingBeer.setabv(newBeer.getabv());
 			existingBeer.setBrewery(newBeer.getBrewery());
 			existingBeer.setType(newBeer.getType());
 			existingBeer.setDescription(newBeer.getDescription());

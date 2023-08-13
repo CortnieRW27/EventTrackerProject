@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>HOP TRACK</title>
+	<script src="js/script.js" </script></script>
+</head>
+
+<body>
+	<h1>HOP TRACK</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Beer Name</th>
+			</tr>
+		<tbody id="hopTrackTableBody"></tbody>
+		</thead>
+	</table>
+
+	<div id="beerData"></div>
+
+
+	<hr>
+	<h2 id="formTitle">Add a Beer</h2>
+
+	<form name="newBeerForm">
+		<div>
+			<label for="name">Name</label>
+			<input type="text" name="name">
+		</div>
+		<br>
+		<div>
+			<label for="abv">ABV</label>
+			<input type="number" name="abv">
+		</div>
+		<br>
+		<div>
+			<label for="brewery">Brewery</label>
+			<input type="text" name="brewery">
+		</div>
+		<br>
+		<div>
+			<label for="type">Type Of Beer</label>
+			<input type="text" name="type">
+		</div>
+		<br>
+		<div>
+			<label for="description">Description</label>
+			<textarea rows="3" cols="40" name="description"></textarea>
+		</div>
+		<br>
+		<div>
+			<label for="color">Color Of Beer</label>
+			<input type="text" name="color">
+		</div>
+		<br>
+		<div>
+			<label for="rating">Rating</label>
+			<input type="number" name="rating">
+		</div>
+		<br>
+		<div>
+			<label for="foodPairing">Food Pairing</label>
+			<input type="text" name="foodPairing">
+		</div>
+		<br>
+		<div>
+			<label for="availability">Availability</label>
+			<input type="text" name="availability">
+		</div>
+
+		<button name="createBeer" class="btn btn-primary">Add Beer</button>
+		<button name="updateBeer" class="btn btn-primary">Update Beer</button>
+	</form>
+<hr>
+
+<p id="totalABV">Total ABV: 0.00</p>
+
+</body>
+
+</html>

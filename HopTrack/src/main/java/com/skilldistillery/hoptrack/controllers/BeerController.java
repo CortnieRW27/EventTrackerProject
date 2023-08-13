@@ -62,6 +62,7 @@ public class BeerController {
 	public Beer updateBeer(@PathVariable Integer beerId, @RequestBody Beer beer, HttpServletResponse res,
 			HttpServletRequest req) {
 		try {
+			System.out.println("*******************" + beerId);
 			beer = beerService.update(beerId, beer);
 			if (beer == null) {
 				res.setStatus(404);

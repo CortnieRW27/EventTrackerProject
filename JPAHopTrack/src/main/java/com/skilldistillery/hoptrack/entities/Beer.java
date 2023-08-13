@@ -17,7 +17,8 @@ public class Beer {
 
 	private String name;
 	
-	private double aBV;
+	@Column(name= "ABV")
+	private double abv;
 	
 	private String brewery;
 	
@@ -59,12 +60,12 @@ public class Beer {
 	}
 	
 
-	public double getaBV() {
-		return aBV;
+	public double getabv() {
+		return abv;
 	}
 
-	public void setaBV(double aBV) {
-		this.aBV = aBV;
+	public void setabv(double abv) {
+		this.abv = abv;
 	}
 
 	public String getBrewery() {
@@ -133,7 +134,7 @@ public class Beer {
 
 	@Override
 	public String toString() {
-		return "Beer [id=" + id + ", name=" + name + ", aBV=" + aBV + ", brewery=" + brewery + ", type=" + type
+		return "Beer [id=" + id + ", name=" + name + ", aBV=" + abv + ", brewery=" + brewery + ", type=" + type
 				+ ", description=" + description + ", color=" + color + ", rating=" + rating + ", foodPairing="
 				+ foodPairing + ", imageURL=" + imageURL + ", availability=" + availability + "]";
 	}
