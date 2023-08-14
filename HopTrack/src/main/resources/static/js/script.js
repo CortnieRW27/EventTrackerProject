@@ -37,7 +37,7 @@ function loadBeerList() {
 				displayTotalABV(totalABV);
 			}
 			else {
-				//TODO
+				console.error('No Beer List')
 			}
 		}
 
