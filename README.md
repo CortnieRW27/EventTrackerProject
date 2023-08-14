@@ -8,10 +8,10 @@ During this project I worked on the back end of the Event Tracker that will even
 
 | HTTP Verb | URI                      | Request Body | Response Body |
 |-----------|--------------------------|--------------|---------------|
-| GET       | `/api/hoptrack`          |              | List of dog parks |
-| GET       | `/api/hoptrack/{beerId}` |              | Single dog park | 
-| POST      | `/api/hoptrack`          | Representation of a new park| Created park |
-| PUT       | `/api/hoptrack/{beerId}` | Representation of a new version of a park | Updated park|
+| GET       | `/api/hoptrack`          |              | List of beers |
+| GET       | `/api/hoptrack/{beerId}` |              | Single beer | 
+| POST      | `/api/hoptrack`          | Representation of a beer| Created beer|
+| PUT       | `/api/hoptrack/{beerId}` | Representation of a new version of a beer | Updated beer|
 | DELETE    | `/api/hoptrack/{beerId}` |              |                | 
 
 Chrome 
