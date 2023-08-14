@@ -48,6 +48,7 @@ function loadBeerList() {
 function displayBeerList(beerList) {
 	if (beerList && Array.isArray(beerList)) {
 		let tbody = document.getElementById("hopTrackTableBody");
+		tbody.textContent = '';
 		for (let beer of beerList) {
 			let tr = document.createElement('tr');
 			let td = document.createElement('td');
@@ -189,6 +190,7 @@ function createBeer() {
 				console.log('Beer Created');
 				let responseData = JSON.parse(xhr.responseText);
 				displayBeerDetails(responseData);
+				loadBeerList();
 			} else {
 				console.log('Error creating beer: ' + xhr.status);
 			}
@@ -221,18 +223,19 @@ function updateBeer(beerId) {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 201 || xhr.status === 200) {
 				console.log('Beer updated');
+				console.log(xhr.responseText);
 				let responseData = JSON.parse(xhr.responseText);
+				console.log(responseData);
 				displayBeerDetails(responseData);
+				loadBeerList();
 			} else {
 				console.log('Error updating beer: ' + xhr.status);
 			}
 		}
 
 	};
-
+	console.log(beerData);
 	xhr.send(JSON.stringify(beerData));
-	loadBeerList();
-	window.location.reload();
 
 }
 
