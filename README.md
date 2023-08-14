@@ -1,6 +1,6 @@
 ### Description
 
-During this project I worked on the back end of the Event Tracker that will eventually become the newest and greatest way to track your favorite beers and beer events. I got all CRUD operations working in postman and then went back to input error handling. I can now list all beers in my database, find one by its ID, create a new one, update a beer, and also delete one.  
+During this project I worked on the back end of the Event Tracker that will eventually become the newest and greatest way to track your favorite beers and beer events. I got all CRUD operations working in postman and then went back to input error handling. I can now list all beers in my database, find one by its ID, create a new one, update a beer, and also delete one. My update from this weekend is now a fully functioning front end that is loaded and navigated through dynamically using JavaScript and AJAX.
 
 #### Technology Used
 
