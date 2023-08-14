@@ -44,7 +44,7 @@ public class BeerServiceImpl implements BeerService {
 			existingBeer.setBrewery(newBeer.getBrewery());
 			existingBeer.setType(newBeer.getType());
 			existingBeer.setDescription(newBeer.getDescription());
-			existingBeer.setColor(newBeer.getDescription());
+			existingBeer.setColor(newBeer.getColor());
 			existingBeer.setRating(newBeer.getRating());
 			existingBeer.setFoodPairing(newBeer.getFoodPairing());
 			existingBeer.setAvailability(newBeer.getAvailability());
