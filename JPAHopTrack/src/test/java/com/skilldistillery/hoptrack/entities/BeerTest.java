@@ -45,7 +45,7 @@ class BeerTest {
 	void test() {
 		assertNotNull(beer);
 		assertNotNull(beer.getName());
-		assertEquals("Voodoo Ranger", beer.getName());
+		assertEquals("Voodoo Ranger Juicy Haze", beer.getName());
 	}
 
 }
