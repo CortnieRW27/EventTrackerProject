@@ -6,19 +6,28 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { BeerNamePipe } from './pipes/beer-name.pipe';
+import { CreateComponent } from './components/create/create.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BeerNamePipe,
+    CreateComponent,
+    NavBarComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [BeerNamePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

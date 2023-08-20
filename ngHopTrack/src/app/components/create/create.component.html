@@ -1,0 +1,31 @@
+<div class="page-container">
+
+
+<h2>Create a New Beer</h2>
+<div class="form-floating mb-3">
+  <form (submit)="create(newBeer)">
+    <label for="name">Name: </label>
+    <input type="text" name="name" class="form-control" required [(ngModel)]="newBeer.name" /> <br>
+
+    <label for="abv">ABV: </label>
+    <input type="number" name="abv" class="form-control" required [(ngModel)]="newBeer.abv" /> <br>
+
+    <label for="brewery">Brewery: </label>
+    <input type="text" name="brewery" class="form-control" required [(ngModel)]="newBeer.brewery" /> <br>
+
+    <label for="type">Type of Beer: </label>
+    <input type="text" name="type" class="form-control" required [(ngModel)]="newBeer.type" /> <br>
+
+    <label for="description">Description: </label>
+    <textarea id="description" name="description" class="form-control" required [(ngModel)]="newBeer.description"></textarea> <br>
+
+    <label for="color">Color of Beer: </label>
+    <input type="text" name="color" class="form-control" required [(ngModel)]="newBeer.color" /> <br>
+
+    <label for="foodPairing">Food Pairing: </label>
+    <input type="text" name="foodPairing" class="form-control" required [(ngModel)]="newBeer.foodPairing" /> <br>
+
+    <button (click)="create">Create Beer</button>
+  </form>
+</div>
+</div>

@@ -1,2 +1,85 @@
+<div class="page-container">
 
-<li *ngFor=" let beer of beerList">{{beer.id}} {{beer.name}}</li>
+<h1>{{title}}</h1>
+
+
+<div id="beerList" *ngIf="!selected">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)="selected = beer" *ngFor="let beer of beerList | beerName: selectedType">
+          <td>{{beer.name}}</td>
+          <td>{{beer.type}}</td>
+          <td><button (click)="deleteBeer(beer.id)" class="deleteButton">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="beerDetails" *ngIf="selected && ! editBeer">
+    <h3>{{ selected.name }}</h3>
+    <p><strong>ID: </strong>{{ selected.id }}</p>
+    <p><strong>ABV: </strong>{{ selected.abv}}</p>
+    <p><strong>Brewery: </strong>{{ selected.brewery }}</p>
+    <p><strong>Type of Beer: </strong>{{ selected.type }}</p>
+    <p><strong>Description: </strong>{{ selected.description }}</p>
+    <p><strong>Color of Beer: </strong>{{ selected.color }}</p>
+    <p><strong>Food Pairing: </strong>{{ selected.foodPairing }}</p>
+    <p><strong>Availability: </strong>{{ selected.availability}}</p>
+    <div class="fadein">
+    <img src="{{selected.imageURL}}"> <br>
+    </div>
+
+    <button (click)="displayTable()" class="button">Back</button>
+    <button (click)="setEditTodo()" class="button">Edit</button>
+  </div>
+
+
+  <div id="beerEdit" *ngIf="editBeer">
+    <form>
+      <div class="form-group">
+      <label for="name" class="form-label"><strong>Name: </strong></label>
+      <input type="text" name="name" [(ngModel)]="editBeer.name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="abv" class="form-label"><strong>ABV: </strong></label>
+        <input type="number" name="abv" [(ngModel)]="editBeer.abv" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="brewery" class="form-label"><strong>Brewery: </strong></label>
+        <input type="text" name="brewery" [(ngModel)]="editBeer.brewery" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="type" class="form-label"><strong>Type of Beer: </strong></label>
+        <input type="text" name="type" [(ngModel)]="editBeer.type" class="form-control"/>
+      </div>
+    <div class="form-group">
+      <label for="description" class="form-label"><strong>Description: </strong></label>
+      <input type="text" name="description" [(ngModel)]="editBeer.description"  class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="color" class="form-label"><strong>Color of Beer: </strong></label>
+        <input type="text" name="color" [(ngModel)]="editBeer.color" class="form-control"/>
+     </div>
+     <div class="form-group">
+        <label for="foodPairing" class="form-label"><strong>Food Pairing: </strong></label>
+        <input type="text" name="foodPairing" [(ngModel)]="editBeer.foodPairing" class="form-control"/>
+      </div>
+      <button (click)="editBeer = null" class="btn btn-danger">Cancel</button>
+      <button (click)="updateBeer(editBeer)" class="btn btn-success">Save</button>
+
+    </form>
+    </div>
+
+
+<div class="button-container">
+  <span *ngFor="let type of types" class="button" (click)="selectedType = type">{{type}} : </span>
+</div>
+
+</div>

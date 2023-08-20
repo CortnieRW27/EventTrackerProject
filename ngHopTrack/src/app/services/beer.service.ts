@@ -39,8 +39,6 @@ export class BeerService {
   }
 
   create(beer: Beer): Observable<Beer> {
-    beer.completed = false;
-    beer.description = '';
     return this.http.post<Beer>(this.url, beer).pipe(
       catchError((err: any) => {
         console.log(err);
@@ -51,8 +49,8 @@ export class BeerService {
     );
   }
 
-  update(updateBeer: Beer): Observable<Beer> {
-    return this.http.put<Beer>(this.url + '/' + update.id, updateBeer).pipe(
+  updateBeer(updateBeer: Beer): Observable<Beer> {
+    return this.http.put<Beer>(this.url + '/' + updateBeer.id, updateBeer).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError(

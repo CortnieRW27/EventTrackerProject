@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.page-container  {
+  margin: 5px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .deleteButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lightgray; /* Button background color */
+    color: black; /* Button text color */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .fadein img{
+    opacity:0.5;
+    transition: 1s ease;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    }
+
+    .fadein img:hover{
+    opacity: 5;
+    transition: 1s ease;
+    }
+
+  /* img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
+
+  img:hover {
+    text-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  } */
