@@ -37,6 +37,7 @@ constructor(
   private router: Router
 ) {}
 
+
 selectBeer(beer: Beer): void {
   this.selected = beer;
 }
